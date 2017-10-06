@@ -9,11 +9,11 @@ namespace Trainers.Repositories
 {
     public class Database
     {
-        private const string CONNECTION_STRING = "DbConnection";
+        private const string ConnectionString = "DbConnection";
 
         private static string GetConnectionString()
         {
-            return System.Configuration.ConfigurationManager.ConnectionStrings[CONNECTION_STRING].ConnectionString;
+            return System.Configuration.ConfigurationManager.ConnectionStrings[ConnectionString].ConnectionString;
         }
 
         private static ISessionFactory _sessionFactory;
