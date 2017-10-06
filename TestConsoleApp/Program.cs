@@ -30,6 +30,15 @@ namespace TestConsoleApp
             var auth2 = userService.AuthenticateUser("gaby", "password");
             Console.WriteLine(auth2);
 
+            newUser.UserStatus = UserStatus.Active;
+            userService.SaveUser(newUser);
+
+            var auth3 = userService.AuthenticateUser("gaby", "password");
+            Console.WriteLine(auth3);
+
+            var auth4 = userService.AuthenticateUser("gaby", "password1");
+            Console.WriteLine(auth4);
+
             userService.DeleteUser(newUser);
 
             Console.ReadLine();

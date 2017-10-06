@@ -3,6 +3,7 @@ using Trainers.Data;
 using Trainers.Data.Enums;
 using Trainers.Repositories;
 using Trainers.Services.Interfaces;
+using Trainers.Utilities;
 
 namespace Trainers.Services
 {
@@ -13,8 +14,8 @@ namespace Trainers.Services
         {
             using (var userRepository = new UserRepository())
             {
-                var user = userRepository.Get(x => x.UserName == username && x.Password == password).FirstOrDefault();
-                return user != null && user.UserStatus == UserStatus.Active;
+                var user = userRepository.Get(x => x.UserName == username).FirstOrDefault();
+                return user != null && user.UserStatus == UserStatus.Active && EncryptionUtility.Verify(password, user.Password);
             }
         }
 
@@ -25,6 +26,7 @@ namespace Trainers.Services
                 try
                 {
                     repository.BeginTransaction();
+                    user.Password = EncryptionUtility.Encrypt(user.Password);
                     repository.Save(user);
                 }
                 catch

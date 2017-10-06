@@ -57,6 +57,10 @@
       <Project>{e17faceb-1104-4372-ba21-625392a63981}</Project>
       <Name>Trainers.Repositories</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Trainers.Utilities\Trainers.Utilities.csproj">
+      <Project>{caaedcbc-5635-4620-a8b8-753d189d83e1}</Project>
+      <Name>Trainers.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
