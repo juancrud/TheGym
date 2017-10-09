@@ -49,7 +49,7 @@ namespace TestConsoleApp
             ITrainerService trainerService = new TrainerService();
 
             var trainer = CreateTrainer();
-            trainer.User = CreateUser();
+            //trainer.User = CreateUser();
 
             trainerService.SaveTrainer(trainer);
 
