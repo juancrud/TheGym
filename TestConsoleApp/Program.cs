@@ -10,15 +10,17 @@ namespace TestConsoleApp
     {
         public static void Main(string[] args)
         {
+            TestUsers();
+            TestTrainers();
+
+            Console.ReadLine();
+        }
+
+        private static void TestUsers()
+        {
             IUserService userService = new UserService();
 
-            var newUser = new User
-            {
-                DateCreated = DateTime.Now,
-                UserName = "gaby",
-                Password = "password",
-                UserStatus = UserStatus.Active
-            };
+            var newUser = CreateUser();
             userService.SaveUser(newUser);
 
             var auth = userService.AuthenticateUser("gaby", "password");
@@ -40,8 +42,45 @@ namespace TestConsoleApp
             Console.WriteLine(auth4);
 
             userService.DeleteUser(newUser);
+        }
 
-            Console.ReadLine();
+        private static void TestTrainers()
+        {
+            ITrainerService trainerService = new TrainerService();
+
+            var trainer = CreateTrainer();
+            trainer.User = CreateUser();
+
+            trainerService.SaveTrainer(trainer);
+
+            trainer.PhoneNumber = 87654321;
+            trainerService.SaveTrainer(trainer);
+
+            trainerService.DeleteTrainer(trainer);
+        }
+
+        private static User CreateUser()
+        {
+            return new User
+            {
+                DateCreated = DateTime.Now,
+                UserName = "gaby",
+                Password = "password",
+                UserStatus = UserStatus.Active
+            };
+        }
+
+        private static Trainer CreateTrainer()
+        {
+            return new Trainer
+            {
+                Name = "Gabriela Sanchez",
+                BirthDay = new DateTime(1984, 5, 9),
+                DocumentId = 112040765,
+                EmailAddress = "gabskatze@gmail.com",
+                PhoneNumber = 12345678,
+                MailAddress = "Los Arcos, Heredia"
+            };
         }
     }
 }
