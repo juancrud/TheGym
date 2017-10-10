@@ -14,6 +14,7 @@ namespace Trainers.Repositories.Mappings
             Map(x => x.EmailAddress);
             Map(x => x.MailAddress);
             Map(x => x.PhoneNumber);
+            HasMany(x => x.Measurements).Cascade.AllDeleteOrphan();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Trainers.Data
 {
@@ -15,5 +16,6 @@ namespace Trainers.Data
 
         //Foto
         //Otros campos
+        public virtual IList<Measurement> Measurements { get; set; }
     }
 }

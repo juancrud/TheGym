@@ -57,6 +57,9 @@
     <Compile Include="Interfaces\ITrainerRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Mappings\CustomerMap.cs" />
+    <Compile Include="Mappings\MeasurementItemMap.cs" />
+    <Compile Include="Mappings\MeasurementItemValueMap.cs" />
+    <Compile Include="Mappings\MeasurementMap.cs" />
     <Compile Include="Mappings\TrainerMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
