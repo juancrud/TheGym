@@ -12,10 +12,9 @@ namespace Trainers.Data
         public virtual string EmailAddress { get; set; }
         public virtual string MailAddress { get; set; }
         public virtual int PhoneNumber { get; set; }
+        public virtual byte[] Image { get; set; }
         public virtual User User { get; set; }
-
-        //Foto
-        //Otros campos
         public virtual IList<Measurement> Measurements { get; set; }
+        public virtual IList<Routine> Routines { get; set; }
     }
 }
