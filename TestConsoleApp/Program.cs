@@ -1,8 +1,8 @@
 ﻿using System;
-using Trainers.Data;
-using Trainers.Data.Enums;
-using Trainers.Services;
-using Trainers.Services.Interfaces;
+using TheGym.Data;
+using TheGym.Data.Enums;
+using TheGym.Services;
+using TheGym.Services.Interfaces;
 
 namespace TestConsoleApp
 {

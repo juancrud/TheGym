@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B9137373-03EB-46BA-A524-5C2BC19F4A3B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{0934106E-7541-4DD1-B768-D29A3DA91725}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestConsoleApp</RootNamespace>
-    <AssemblyName>TestConsoleApp</AssemblyName>
+    <RootNamespace>TheGym.Data</RootNamespace>
+    <AssemblyName>TheGym.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,22 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Enums\ExerciseMediaType.cs" />
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\UserStatus.cs" />
+    <Compile Include="Exercise.cs" />
+    <Compile Include="ExerciseCategory.cs" />
+    <Compile Include="ExerciseMedia.cs" />
+    <Compile Include="Measurement.cs" />
+    <Compile Include="MeasurementItem.cs" />
+    <Compile Include="MeasurementItemValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Routine.cs" />
+    <Compile Include="RoutineExerciseItem.cs" />
+    <Compile Include="RoutineItem.cs" />
+    <Compile Include="Trainer.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TheGym.Data\TheGym.Data.csproj">
-      <Project>{0934106E-7541-4DD1-B768-D29A3DA91725}</Project>
-      <Name>TheGym.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TheGym.Services\TheGym.Services.csproj">
-      <Project>{92107EC3-28DE-486C-AE97-40ADB730781D}</Project>
-      <Name>TheGym.Services</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
